@@ -27,7 +27,7 @@
     "appId": "net.makitokatsube.app.sample.file1",
     "files": [
       "package.json",
-      "public"
+      "public/"
     ],
     "mac":{
       "target": "dmg"

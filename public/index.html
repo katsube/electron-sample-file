@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="Content-Security-Policy" content="script-src 'self' 'unsafe-inline';" />
+  <title>Hello World!</title>
+  <style>
+    body{ background-color:white; }
+    #btn-load{ margin:12px; }
+    #output{ width:100%; height:500px; }
+  </style>
+</head>
+<body>
+
+<form>
+  <button type="button" id="btn-load">読み込み</button>
+</form>
+<textarea id="output"></textarea>
+
+<script>
+const {ipcRenderer} = require('electron');
+
+document.querySelector('#btn-load').addEventListener('click', () => {
+  // メインプロセスを呼び出し
+  ipcRenderer.invoke('file-open')
+    .then((data) => {
+      // キャンセルで閉じた
+      if( data.status === undefined ){
+        return(false);
+      }
+      // ファイルが開けなかった
+      if( ! data.status ){
+        alert(`ファイルが開けませんでした\n${data.message}`);
+        return(false);
+      }
+
+      // ファイルが無事に開けた
+      document.querySelector('#output').value = data.text;
+    })
+    .catch((err) => {
+      alert(err);
+    });
+});
+</script>
+</body>
+</html>
