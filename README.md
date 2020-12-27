@@ -1,4 +1,4 @@
-# Electron Smaple - file load
+# Electron Sample - file load
 「読み込み」ボタンをクリックするとダイアログが開き、指定したファイルの内容がテキストエリアに表示されます。
 
 ![画面1](doc/image/electron-fileload1_1.png)
