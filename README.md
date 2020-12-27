@@ -1,8 +1,10 @@
 # Electron Smaple - file load
 「読み込み」ボタンをクリックするとダイアログが開き、指定したファイルの内容がテキストエリアに表示されます。
 
-* [解説ページ]()
+![画面1](doc/image/electron-fileload1_1.png)
 
+## 解説ページ
+* [[Electron] ダイアログで指定したファイルを読み込む](https://blog.katsubemakito.net/nodejs/electron/loadfile-opendialog)
 
 ## 準備
 Gitでリポジトリを取得します。
